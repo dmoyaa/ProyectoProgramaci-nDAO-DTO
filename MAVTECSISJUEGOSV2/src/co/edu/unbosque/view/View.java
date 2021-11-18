@@ -21,6 +21,8 @@ public class View extends JFrame{
 	private PJugador pjugador;
 	private PJugador2 pjugador2;
 	private Panel_CrudPartida pCrudPartida;
+	
+	
 	public Panel_MostrarPartida getpMP() {
 		return pMP;
 	}

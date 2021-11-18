@@ -8,14 +8,12 @@ public class SistemaDeInformación {
 	
 	private PartidaDTO partida;
 	private PartidaDAO pdao;
-	private  ArrayList <PartidaDTO> partidas;
 	private ArchivosBinarios ab;
 	private JuegoDTO juegos;
 	private JugadorDTO jugadores;
 	
 	public SistemaDeInformación() {
 		pdao = new PartidaDAO();
-		partidas = new ArrayList<PartidaDTO>(); 
 		ab = new ArchivosBinarios();
 		juegos=new JuegoDTO(null, null);
 		jugadores = new JugadorDTO(null, 0, null, 0);
@@ -45,18 +43,7 @@ public class SistemaDeInformación {
 		
 	}
 
-	public ArrayList<PartidaDTO> getPartidas() {
-		return partidas;
-	}
-
-
-
-	public void setPartidas(ArrayList<PartidaDTO> partidas) {
-		this.partidas = partidas;
-	}
-
-
-
+	
 	public ArchivosBinarios getAb() {
 		return ab;
 	}
