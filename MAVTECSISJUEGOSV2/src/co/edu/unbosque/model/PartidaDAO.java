@@ -45,11 +45,12 @@ public class PartidaDAO {
 		}
 		return mensaje;
 	}
-	public ArrayList<PartidaDTO> mostrarPartidas(){
+public String mostrarPartidas() {
+		String mensaje = "";
+		partidas = ab.leerPartidas();
 		for (PartidaDTO partidaDTO : partidas) {
-			
+			mensaje += partidaDTO.getID()+": "+partidaDTO.getJugador1()+", "+partidaDTO.getJugador2()+", "+partidaDTO.getPuntaje1()+", "+partidaDTO.getPuntaje2()+", "+partidaDTO.getTipoPartida()+"\n";
 		}
-		
-		return partidas;
+		return mensaje;
 	}
 }

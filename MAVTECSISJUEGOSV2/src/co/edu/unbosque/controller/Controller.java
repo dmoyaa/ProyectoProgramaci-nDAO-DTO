@@ -41,6 +41,7 @@ public class Controller implements ActionListener{
 		v.getpCrudPartida().getBotonBp().addActionListener(this);
 		v.getpCrudPartida().getBotonLp().addActionListener(this);
 		v.getpCrudPartida().getRegresarCrud().addActionListener(this);
+		v.getpMP().getBrMostrar().addActionListener(this);
 		
 		
 	}
@@ -119,14 +120,40 @@ public class Controller implements ActionListener{
 			v.getContentPane().remove(v.getpCrudPartida());
 			v.getContentPane().add(v.getpAP());
 			v.getpAP().setVisible(true);
+
 		}
 
 		else if(comando.equals("CARGAR")) {
 			v.MostrarMensaje(s.getPdao().agregarPartida(s.crearOPartida(v.getpAP().getTtpar().getText(), v.getpAP().getTnom1().getText(), v.getpAP().getTnom2().getText(), Math.random()* (10-0)+0, Math.random()* (10-0)+0,Integer.parseInt(v.getpAP().getTid().getText()))));
+
 		}
 		else if(comando.equals("BUSCAR POR ID")){
 			s.getPdao().buscarPartida(Integer.parseInt(v.getpBP().gettId().getText()));
 			v.getpBP().gettPEncontrada().setText((s.getPdao().buscarPartida(Integer.parseInt(v.getpBP().gettId().getText()))).toString());
+
+		}
+		else if(comando.equals("REGRESAR")) {
+			v.getpAP().setVisible(false);
+			v.getContentPane().remove(v.getpAP());
+			v.getContentPane().add(v.getpCrudPartida());
+		}
+		else if(comando.equals("REGRESAR PARTIDA")) {
+			v.getpBP().setVisible(false);
+			v.getContentPane().remove(v.getpBP());
+			v.getContentPane().add(v.getpCrudPartida());
+		}
+		else if(comando.equals("MOSTRAR PARTIDAS")) {
+			v.getpMP().gettPartidas().setText("");
+			v.getContentPane().remove(v.getpCrudPartida());
+			v.getContentPane().add(v.getpMP());
+			v.getpMP().gettPartidas().append(s.getPdao().mostrarPartidas());
+			v.getpMP().setVisible(true);
+		}
+		else if(comando.equals("REGRESAR MOSTRAR")) {
+			v.getpMP().setVisible(false);
+			v.getContentPane().remove(v.getpMP());
+			v.getContentPane().add(v.getpCrudPartida());
+
 		}
 	}
 }
