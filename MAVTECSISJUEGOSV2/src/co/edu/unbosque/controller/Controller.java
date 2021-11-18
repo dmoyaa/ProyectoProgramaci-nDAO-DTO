@@ -35,14 +35,25 @@ public class Controller implements ActionListener{
 		v.getpJuego().getbRegresar().addActionListener(this);
 		v.getPjugador().getBotonsig().addActionListener(this);
 		v.getPjugador().getBotonguardarJ1().addActionListener(this);
-		v.getPjugador2().getBregresar().addActionListener(this);
-		v.getPjugador2().getBguardarJ2().addActionListener(this);
 		v.getpCrudPartida().getBotonAp().addActionListener(this);
 		v.getpCrudPartida().getBotonBp().addActionListener(this);
 		v.getpCrudPartida().getBotonLp().addActionListener(this);
 		v.getpCrudPartida().getRegresarCrud().addActionListener(this);
 		v.getpMP().getBrMostrar().addActionListener(this);
-		
+		v.getpBJ().getbBjuego().addActionListener(this);
+		v.getpBJ().getbRcrudJuego().addActionListener(this);
+		v.getpAJ().getCargarDatosJuego().addActionListener(this);
+		v.getpAJ().getRegresarJ().addActionListener(this);
+		v.getpJuego().getbGuardar().addActionListener(this);
+		v.getpJuego().getbRegresar().addActionListener(this);
+		v.getpMJ().getbMJuego().addActionListener(this);
+		v.getpCrudJuego().getBotonAj().addActionListener(this);
+		v.getpCrudJuego().getBotonMj().addActionListener(this);
+		v.getpCrudJuego().getBotonBj().addActionListener(this);
+		v.getpCrudJuego().getRegresarCrudp().addActionListener(this);
+		v.getpOpciones().getBotonRegistro().addActionListener(this);
+		v.getpOpciones().getBotonBjugador().addActionListener(this);
+		v.getpOpciones().getBotonRegresarInicial().addActionListener(this);
 		
 	}
 
@@ -54,63 +65,13 @@ public class Controller implements ActionListener{
 			v.getpCrudPartida().setVisible(true);
 
 		}
-//		else if(comando.equals("JUEGOS")) {
-//
-//			v.getContentPane().remove(v.getpInicio());
-//			v.getContentPane().add(v.getpJuego());
-//			v.getpJuego().setVisible(true);
-//
-//		}
-//		else if(comando.equals("JUGADOR")) {
-//			v.getContentPane().remove(v.getpInicio());
-//			v.getContentPane().add(v.getPjugador());
-//			v.getPjugador().setVisible(true);
-//		}
-//		else if(comando.equals("SIGUIENTE JUGADOR")) {
-//
-//			v.getContentPane().remove(v.getPjugador());
-//			v.getContentPane().add(v.getPjugador2());
-//			v.getPjugador2().setVisible(true);
-//		}
-//		else if(comando.equals("Regresar al menú")) {
-//			v.getPjugador2().setVisible(false);
-//			v.getContentPane().remove(v.getPjugador2());
-//			v.getContentPane().add(v.getpInicio());
-//			v.getpInicio().setVisible(true);
-//		}
-//		else if(comando.equals("Guardar Datos J1")) {
-//			s.getJugadores().setEdad(Integer.parseInt(v.getPjugador().getEdad1().getText()));
-//			s.getJugadores().setGenero(v.getPjugador().getGen1().getText());
-//			s.getJugadores().setNombre(v.getPjugador().getNom1().getText());
-//
-//
-//		}
-//		else if(comando.equals("Guardar Datos J2")) {
-//			s.getJugadores().setEdad2(Integer.parseInt(v.getPjugador2().getEdad1().getText()));
-//			s.getJugadores().setGenero2(v.getPjugador2().getGen1().getText());
-//			s.getJugadores().setNombre2(v.getPjugador2().getNom1().getText()); 
-//
-//		}
-//
-//		else if (comando.equals("GUARDAR DATOS")) {
-//
-//			s.getJuegos().setNombreJuego(v.getpJuego().gettTipJuego().getText());
-//			s.getJuegos().setTipoJuego(v.getpJuego().gettNomJuego().getText());
-//
-//		}
-//		else if (comando.equals("REGRESAR AL INICIO")){
-//			v.getpJuego().setVisible(false);
-//			v.getContentPane().remove(v.getpJuego());
-//			v.getContentPane().add(v.getpInicio());
-//			v.getpInicio().setVisible(true);
-//
-//		}
-//		else if(comando.equals("REGRESAR")){
-//			v.getPpartida().setVisible(false);
-//			v.getContentPane().remove(v.getPpartida2());
-//			v.getContentPane().add(v.getpInicio());
-//			v.getpInicio().setVisible(true);
-//		}
+		else if(comando.equals("JUEGOS")) {
+
+			v.getContentPane().remove(v.getpInicio());
+			v.getContentPane().add(v.getpCrudJuego());
+			v.getpCrudJuego().setVisible(true);
+
+		}
 		else if(comando.equals("BUSCAR PARTIDA")) {
 			v.getContentPane().remove(v.getpCrudPartida());
 			v.getContentPane().add(v.getpBP());
@@ -153,7 +114,66 @@ public class Controller implements ActionListener{
 			v.getpMP().setVisible(false);
 			v.getContentPane().remove(v.getpMP());
 			v.getContentPane().add(v.getpCrudPartida());
-
 		}
+		else if(comando.equals("AGREGAR JUEGO")) {	
+			v.getpCrudJuego().setVisible(false);
+			v.getContentPane().remove(v.getpCrudJuego());
+			v.getContentPane().add(v.getpAJ());
+			v.getpAJ().setVisible(true);	
+		}
+		else if(comando.equals("CARGAR DATOS JUEGO")) {
+			v.MostrarMensaje(s.getJu().agregarJuego(s.crearOJuego(v.getpAJ().getTnomJu().getText(),v.getpAJ().getTtipJu().getText(),Integer.parseInt(v.getpAJ().getTidJu().getText()))));	
+		}
+		else if(comando.equals("REGRESAR MENU")) {
+			v.getpAJ().setVisible(false);
+			v.getContentPane().remove(v.getpAJ());
+			v.getContentPane().add(v.getpCrudJuego());
+			v.getpCrudJuego().setVisible(true);	
+			
+		}else if(comando.equals("BUSCAR JUEGO")) {
+			v.getpCrudJuego().setVisible(false);
+			v.getContentPane().remove(v.getpCrudJuego());
+			v.getContentPane().add(v.getpBJ());
+			v.getpBJ().setVisible(true);
+		
+		}else if(comando.equals("BUSCAR POR ID JUEGO")) {
+			v.getpBJ().getlPEncontradaJuego().setText((s.getJu().buscarJuego(Integer.parseInt(v.getpBJ().gettIdJuego().getText().toString()))));
+		}
+		else if(comando.equals("REGRESAR JUEGO")) {
+			v.getpBJ().setVisible(false);
+			v.getContentPane().remove(v.getpBJ());
+			v.getContentPane().add(v.getpCrudJuego());
+			v.getpCrudJuego().setVisible(true);
+		}
+		else if(comando.equals("REGRESAR CRUDP")) {
+			v.getpCrudJuego().setVisible(false);
+			v.getContentPane().remove(v.getpCrudJuego());
+			v.getContentPane().add(v.getpInicio());
+			v.getpInicio().setVisible(true);
+		}
+		else if(comando.equals("MOSTRAR JUEGO")) {
+			v.getpMJ().gettJuego().setText("");
+			v.getpCrudJuego().setVisible(false);
+			v.getContentPane().remove(v.getpCrudJuego());
+			v.getContentPane().add(v.getpMJ());
+			v.getpMJ().gettJuego().append(s.getJu().mostrarJuego());
+			v.getpMJ().setVisible(true);
+		}
+		else if(comando.equals("REGRESAR A JUEGO")) {
+			v.getpMJ().setVisible(false);
+			v.getContentPane().remove(v.getpMJ());
+			v.getContentPane().add(v.getpCrudJuego());
+			v.getpCrudJuego().setVisible(true);
+		}
+		
+		else if(comando.equals("REGRESAR CRUD")) {
+			v.getpCrudPartida().setVisible(false);
+			v.getContentPane().remove(v.getpCrudPartida());
+			v.getContentPane().add(v.getpInicio());
+			v.getpInicio().setVisible(true);
+		}
+		
+		
+		
 	}
 }

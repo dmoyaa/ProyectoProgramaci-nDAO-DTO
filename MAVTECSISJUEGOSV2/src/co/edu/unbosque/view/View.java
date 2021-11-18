@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
+
 public class View extends JFrame{
 
 
@@ -18,9 +19,13 @@ public class View extends JFrame{
 	private PanelInicio pInicio;
 	private Panel_BucarPartida pBP;
 	private PanelJuego pJuego;
-	private PJugador pjugador;
-	private PJugador2 pjugador2;
 	private Panel_CrudPartida pCrudPartida;
+	private Panel_BuscarJuego pBJ;
+	private Panel_MostrarJuego pMJ;
+	private Panel_AgregarJuego pAJ;
+	private Panel_CrudJuego pCrudJuego;
+	private PJugador pjugador;
+	private PanelOpciones pOpciones;
 	
 	
 	public Panel_MostrarPartida getpMP() {
@@ -67,22 +72,31 @@ public class View extends JFrame{
 		pAP.setBounds(10, 10, 200, 200);
 		getContentPane().add(pAP);
 
+		pAJ= new Panel_AgregarJuego();
+		pAJ.setBounds(10, 10, 200, 200);
+		getContentPane().add(pAJ);		
+		
 		pBP= new Panel_BucarPartida();
 		pBP.setBounds(10, 10, 200, 200);
 		getContentPane().add(pBP);
 
+		pBJ = new Panel_BuscarJuego();
+		pBJ.setBounds(10, 10, 200, 200);
+		getContentPane().add(pBJ);
+		
+		pMJ = new Panel_MostrarJuego();
+		pMJ.setBounds(10, 10, 200, 200);
+		getContentPane().add(pMJ);
+		
 		pJuego = new PanelJuego();
 		pJuego.setBounds(10, 10, 200, 200);
 		getContentPane().add(pJuego);
-
 
 		pjugador= new PJugador();
 		pjugador.setBounds(10,10,500,500);
 		getContentPane().add(pjugador);
 
-		pjugador2= new PJugador2();
-		pjugador2.setBounds(10,10,500,500);
-		getContentPane().add(pjugador2);
+		
 		
 		pCrudPartida = new Panel_CrudPartida();
 		pCrudPartida.setBounds(10,10,500,500);
@@ -92,6 +106,52 @@ public class View extends JFrame{
 		pMP.setBounds(10,10,500,500);
 		getContentPane().add(pMP);
 
+		pCrudJuego = new Panel_CrudJuego();
+		pCrudJuego.setBounds(10,10,500,500);
+		getContentPane().add(pCrudJuego);
+		
+		pjugador= new PJugador();
+		pjugador.setBounds(10,10,500,500);
+		getContentPane().add(pjugador);
+
+		
+		pOpciones= new PanelOpciones();
+		pOpciones.setBounds(10,10,500,500);
+		getContentPane().add(pOpciones);
+		
+		
+	}
+
+	public Panel_BuscarJuego getpBJ() {
+		return pBJ;
+	}
+
+	public void setpBJ(Panel_BuscarJuego pBJ) {
+		this.pBJ = pBJ;
+	}
+
+	public Panel_MostrarJuego getpMJ() {
+		return pMJ;
+	}
+
+	public void setpMJ(Panel_MostrarJuego pMJ) {
+		this.pMJ = pMJ;
+	}
+
+	public Panel_AgregarJuego getpAJ() {
+		return pAJ;
+	}
+
+	public void setpAJ(Panel_AgregarJuego pAJ) {
+		this.pAJ = pAJ;
+	}
+
+	public Panel_CrudJuego getpCrudJuego() {
+		return pCrudJuego;
+	}
+
+	public void setpCrudJuego(Panel_CrudJuego pCrudJuego) {
+		this.pCrudJuego = pCrudJuego;
 	}
 
 	public Panel_CrudPartida getpCrudPartida() {
@@ -102,14 +162,7 @@ public class View extends JFrame{
 		this.pCrudPartida = pCrudPartida;
 	}
 
-	public PJugador2 getPjugador2() {
-		return pjugador2;
-	}
-
-	public void setPjugador2(PJugador2 pjugador2) {
-		this.pjugador2 = pjugador2;
-	}
-
+	
 
 	public Panel_BucarPartida getpBP() {
 		return pBP;
@@ -142,5 +195,14 @@ public class View extends JFrame{
 	public void setpAP(Panel_AgregarPartida pAP) {
 		this.pAP = pAP;
 	}
+
+	public PanelOpciones getpOpciones() {
+		return pOpciones;
+	}
+
+	public void setpOpciones(PanelOpciones pOpciones) {
+		this.pOpciones = pOpciones;
+	}
+	
 
 }

@@ -3,25 +3,35 @@ package co.edu.unbosque.model;
 import java.util.ArrayList;
 
 import co.edu.unbosque.model.persistence.ArchivosBinarios;
+import co.edu.unbosque.model.JuegoDAO;
+import co.edu.unbosque.model.JuegoDTO;
 
 public class SistemaDeInformación {
 	
 	private PartidaDTO partida;
 	private PartidaDAO pdao;
+	private JuegoDAO ju;
+	private JuegoDTO juego;
+	private  ArrayList <PartidaDTO> partidas;
 	private ArchivosBinarios ab;
-	private JuegoDTO juegos;
-	private JugadorDTO jugadores;
 	
 	public SistemaDeInformación() {
 		pdao = new PartidaDAO();
+		partidas = new ArrayList<PartidaDTO>(); 
 		ab = new ArchivosBinarios();
-		juegos=new JuegoDTO(null, null);
-		jugadores = new JugadorDTO(null, 0, null, 0);
+		ju = new JuegoDAO();
+		
 	}
 	
 	public PartidaDTO crearOPartida(String t, String n1, String n2, double p1, double p2, int id) {
 		return partida = new PartidaDTO(t, n1, n2, p1, p2,id);
 	}
+
+	public JuegoDTO crearOJuego(String nom, String tip, int id) {
+		return juego = new JuegoDTO(nom,tip,id);
+	}
+	
+	
 
 	public PartidaDTO getPartida() {
 		return partida;
@@ -43,7 +53,18 @@ public class SistemaDeInformación {
 		
 	}
 
-	
+	public ArrayList<PartidaDTO> getPartidas() {
+		return partidas;
+	}
+
+
+
+	public void setPartidas(ArrayList<PartidaDTO> partidas) {
+		this.partidas = partidas;
+	}
+
+
+
 	public ArchivosBinarios getAb() {
 		return ab;
 	}
@@ -52,21 +73,25 @@ public class SistemaDeInformación {
 		this.ab = ab;
 	}
 
-	public JuegoDTO getJuegos() {
-		return juegos;
+
+	public JuegoDAO getJu() {
+		return ju;
 	}
 
-	public void setJuegos(JuegoDTO juegos) {
-		this.juegos = juegos;
+	public void setJu(JuegoDAO ju) {
+		this.ju = ju;
 	}
 
-	public JugadorDTO getJugadores() {
-		return jugadores;
+	public JuegoDTO getJuego() {
+		return juego;
 	}
 
-	public void setJugadores(JugadorDTO jugadores) {
-		this.jugadores = jugadores;
+	public void setJuego(JuegoDTO juego) {
+		this.juego = juego;
 	}
+
+
+	
 	
 
 }

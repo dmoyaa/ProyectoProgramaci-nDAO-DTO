@@ -8,8 +8,9 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 import co.edu.unbosque.model.JuegoDTO;
-import co.edu.unbosque.model.JugadorDTO;
+
 import co.edu.unbosque.model.PartidaDTO;
+
 
 public class ArchivosBinarios {
 
@@ -17,11 +18,12 @@ public class ArchivosBinarios {
 	private String rutaJugadores = "./data/jugadores.out";
 	private String rutaPartida = "./data/partidas.out";
 	private ArrayList<PartidaDTO> partidas;
+	private ArrayList<JuegoDTO> juego;
 
 
 	public ArchivosBinarios() {
 		partidas = new ArrayList<PartidaDTO>();
-
+		juego = new ArrayList<JuegoDTO>();
 	}
 
 	public String escribirPartidas(ArrayList<PartidaDTO> partidas) {
@@ -48,5 +50,32 @@ public class ArchivosBinarios {
 		}
 		return partidas;
 	}
+	
+	public String escribirJuego(ArrayList<JuegoDTO> juegos) {
+		String respuesta = "Se ha agregado exitosamente el juego.";		
+		try {
+			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(rutaJuego));
+			out.writeObject(juegos);	
+			out.close();
+		}
+		catch (IOException e) {
+			respuesta = "Error de IO"; 
+		}
+		System.out.println(respuesta);
+		return respuesta;
+	}
+
+	public ArrayList<JuegoDTO> leerJuego() {
+		
+		try {
+			ObjectInputStream in = new ObjectInputStream(new FileInputStream(rutaJuego));
+			juego = (ArrayList<JuegoDTO>)in.readObject();
+			in.close();
+		}
+		catch(IOException|ClassNotFoundException e) {
+		}
+		return juego;
+	}
+
 
 }

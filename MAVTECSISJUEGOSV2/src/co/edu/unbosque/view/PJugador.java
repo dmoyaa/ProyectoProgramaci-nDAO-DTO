@@ -16,11 +16,9 @@ import java.text.*;
 
 public class PJugador extends JPanel{
 
-	//private JLabel labEntrada;
 	private JButton Botonsig;
 	private JButton BotonguardarJ1;
 	
-
 	private JLabel nom ;
 	private JLabel gen ;
 	private JLabel edad ; 
@@ -29,25 +27,11 @@ public class PJugador extends JPanel{
 	private JTextField gen1 ;
 	private JTextField edad1;
 	
-	
-	
 	public PJugador () {
-	//	setLayout(null);
-		
+	
 		initializeComponent();
 			setVisible(false);
 	}
-	
-	//private void setVisible(boolean b) {
-		// TODO Auto-generated method stub
-		
-	
-
-	//private void setLayout(Object object) {
-		// TODO Auto-generated method stub
-		
-	
-
 	public void initializeComponent() {
 		setLayout(new GridLayout(3,2));
 		nom = new JLabel("Nombre:");
@@ -68,6 +52,14 @@ public class PJugador extends JPanel{
 		BotonguardarJ1=new JButton ("Guardar Datos J1");
 		add(BotonguardarJ1);
 
+		//private JLabel ingnom;
+		//private JTextField ingnom1;
+		//public void initializeComponent(){
+		//setLayout(new GridLayout(1,2));
+		//ingnom= new JLabel("Ingrese el nombre del jugador que desea buscar");
+		//add(ingnom);
+		//ingnom1=new JTextField ();
+		//add(ingnom1);
 		
 		setBackground(Color.LIGHT_GRAY);
 		setLayout( new GridLayout(4,2) );
@@ -79,69 +71,53 @@ public class PJugador extends JPanel{
 		setBorder(tb);
 	
 	}
-	
-	public JButton getBotonguardarJ1() {
-		return BotonguardarJ1;
-	}
-
-	public void setBotonguardarJ1(JButton botonguardarJ1) {
-		BotonguardarJ1 = botonguardarJ1;
-	}
 	public JButton getBotonsig() {
 		return Botonsig;
 	}
-
 	public void setBotonsig(JButton botonsig) {
-		this.Botonsig = botonsig;
+		Botonsig = botonsig;
 	}
-
+	public JButton getBotonguardarJ1() {
+		return BotonguardarJ1;
+	}
+	public void setBotonguardarJ1(JButton botonguardarJ1) {
+		BotonguardarJ1 = botonguardarJ1;
+	}
 	public JLabel getNom() {
 		return nom;
 	}
-
 	public void setNom(JLabel nom) {
 		this.nom = nom;
 	}
-
 	public JLabel getGen() {
 		return gen;
 	}
-
 	public void setGen(JLabel gen) {
 		this.gen = gen;
 	}
-
 	public JLabel getEdad() {
 		return edad;
 	}
-
 	public void setEdad(JLabel edad) {
 		this.edad = edad;
 	}
-
 	public JTextField getNom1() {
 		return nom1;
 	}
-
 	public void setNom1(JTextField nom1) {
 		this.nom1 = nom1;
 	}
-
 	public JTextField getGen1() {
 		return gen1;
 	}
-
 	public void setGen1(JTextField gen1) {
 		this.gen1 = gen1;
 	}
-
 	public JTextField getEdad1() {
 		return edad1;
 	}
-
 	public void setEdad1(JTextField edad1) {
 		this.edad1 = edad1;
 	}
 	
-	
-}
+}	
