@@ -21,6 +21,15 @@ public class View extends JFrame{
 	private PJugador pjugador;
 	private PJugador2 pjugador2;
 	private Panel_CrudPartida pCrudPartida;
+	public Panel_MostrarPartida getpMP() {
+		return pMP;
+	}
+
+	public void setpMP(Panel_MostrarPartida pMP) {
+		this.pMP = pMP;
+	}
+
+	private Panel_MostrarPartida pMP;
 
 	public PanelJuego getpJuego() {
 		return pJuego;
@@ -76,6 +85,10 @@ public class View extends JFrame{
 		pCrudPartida = new Panel_CrudPartida();
 		pCrudPartida.setBounds(10,10,500,500);
 		getContentPane().add(pCrudPartida);
+		
+		pMP = new Panel_MostrarPartida();
+		pMP.setBounds(10,10,500,500);
+		getContentPane().add(pMP);
 
 	}
 

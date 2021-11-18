@@ -65,7 +65,7 @@ public class Panel_AgregarPartida extends JPanel{
 		cargarDatos.setBackground(Color.black);
 		cargarDatos.setActionCommand("CARGAR");
 		add(cargarDatos);
-		regresar= new JButton("Regresar");
+		regresar= new JButton("Menú partidas");
 		regresar.setFont(fuente);
 		regresar.setForeground(Color.white);
 		regresar.setBackground(Color.black);

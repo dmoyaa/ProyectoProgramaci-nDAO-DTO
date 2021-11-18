@@ -45,11 +45,11 @@ public class Panel_CrudPartida extends JPanel{
 		botonBp.setBackground(Color.black);
 		botonBp.setActionCommand("BUSCAR PARTIDA");
 		add(botonBp);
-		botonLp = new JButton("Leer Partidas");
+		botonLp = new JButton("Mostrar Partidas");
 		botonLp.setFont(fuente);
 		botonLp.setForeground(Color.white);
 		botonLp.setBackground(Color.black);
-		botonLp.setActionCommand("LEER PARTIDAS");
+		botonLp.setActionCommand("MOSTRAR PARTIDAS");
 		add(botonLp);
 		regresarCrud = new JButton("Regresar");
 		regresarCrud.setActionCommand("REGRESAR CRUD");
