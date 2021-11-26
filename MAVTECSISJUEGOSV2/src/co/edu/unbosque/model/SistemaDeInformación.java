@@ -12,12 +12,10 @@ public class SistemaDeInformación {
 	private PartidaDAO pdao;
 	private JuegoDAO ju;
 	private JuegoDTO juego;
-	private  ArrayList <PartidaDTO> partidas;
 	private ArchivosBinarios ab;
 	
 	public SistemaDeInformación() {
 		pdao = new PartidaDAO();
-		partidas = new ArrayList<PartidaDTO>(); 
 		ab = new ArchivosBinarios();
 		ju = new JuegoDAO();
 		
@@ -52,18 +50,6 @@ public class SistemaDeInformación {
 	public void crearPartida(PartidaDTO partida) {
 		
 	}
-
-	public ArrayList<PartidaDTO> getPartidas() {
-		return partidas;
-	}
-
-
-
-	public void setPartidas(ArrayList<PartidaDTO> partidas) {
-		this.partidas = partidas;
-	}
-
-
 
 	public ArchivosBinarios getAb() {
 		return ab;
